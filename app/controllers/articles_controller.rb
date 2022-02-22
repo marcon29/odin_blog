@@ -28,10 +28,8 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    # @article = Article.assign_attributes(article_params)
     
     if @article.update(article_params)
-    # if @article.save
       redirect_to @article
     else
       render :edit
@@ -43,7 +41,6 @@ class ArticlesController < ApplicationController
     @article.destroy
     redirect_to root_path
   end
-
 
   private
     def article_params
